@@ -1,0 +1,71 @@
+{
+  "name": "@perfect-flight/buffer",
+  "version": "1.0.0",
+  "description": "turf buffer module",
+  "author": "Turf Authors",
+  "contributors": [
+    "Tom MacWright <@tmcw>",
+    "Denis Carriere <@DenisCarriere>",
+    "Stefano Borghi <@stebogit>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Turfjs/turf/issues"
+  },
+  "homepage": "https://github.com/Turfjs/turf",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/perfect-flight/turf-buffer.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "keywords": [
+    "buffer",
+    "offset",
+    "polygon",
+    "linestring",
+    "point",
+    "geojson",
+    "turf"
+  ],
+  "main": "dist/js/index.js",
+  "module": "dist/es/index.js",
+  "exports": {
+    "import": "./dist/es/index.js",
+    "require": "./dist/js/index.js"
+  },
+  "types": "index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "bench": "node -r esm bench.js",
+    "build": "rollup -c rollup.config.js && echo '{\"type\":\"module\"}' > dist/es/package.json",
+    "docs": "node ../../scripts/generate-readmes",
+    "test": "npm-run-all test:*",
+    "test:tape": "node -r esm test.js",
+    "test:types": "tsc --esModuleInterop --noEmit types.ts"
+  },
+  "devDependencies": {
+    "@turf/truncate": "^6.2.0-alpha.3",
+    "benchmark": "*",
+    "esm": "^3.2.25",
+    "load-json-file": "*",
+    "npm-run-all": "*",
+    "rollup": "*",
+    "tape": "*",
+    "write-json-file": "*"
+  },
+  "dependencies": {
+    "@turf/bbox": "^6.2.0-alpha.3",
+    "@turf/center": "^6.2.0-alpha.3",
+    "@turf/helpers": "^6.2.0-alpha.3",
+    "@turf/meta": "^6.2.0-alpha.3",
+    "@turf/projection": "^6.2.0-alpha.3",
+    "d3-geo": "1.7.1",
+    "turf-jsts": "*"
+  }
+}
